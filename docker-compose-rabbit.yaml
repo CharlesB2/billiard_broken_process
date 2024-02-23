@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: rabbitmq
+    ports:
+      - "5672:5672"
+
+  celery:
+    build:
+      context: .
+      dockerfile: alpine.Dockerfile
+    command: celery -A celerytest worker -n w1 --loglevel=info
+    depends_on:
+      - rabbitmq
+    environment:
+      - BROKER_URL=amqp://guest:guest@rabbitmq:5672//
