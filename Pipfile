@@ -7,9 +7,5 @@ name = "pypi"
 celery = {version = "~=5.2"}
 redis = {version = "*"}
 
-[dev-packages]
-pytest-celery = {version = "*"}
-pytest = {version = "*"}
-
 [requires]
 python_version = "3.10"
