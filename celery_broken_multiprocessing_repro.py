@@ -1,15 +1,12 @@
 import os
 import signal
-
-from billiard.connection import Pipe
-from billiard.context import Process
+from multiprocessing import Pipe, Process
 
 from celerytest.celery import app
 
 
 def fun(conn):
     print(f"child: {conn.closed=}, {conn.fileno()=}, {conn.readable=}, {conn.writable=}")
-    #time.sleep(1)
     conn.send(42)
 
 
@@ -29,9 +26,11 @@ def subprocess_fun():
     finally:
         parent_conn.close()
 
+
 @app.task
 def subprocess_fun_task():
     subprocess_fun()
+
 
 if __name__ == '__main__':
     print("calling function")
