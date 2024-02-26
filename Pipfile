@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-celery = {version = "~=5.2"}
+celery = {git = "https://github.com/celery/celery.git", ref = "main"}
 redis = {version = "*"}
 
 [requires]

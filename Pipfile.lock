@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fbdea7838bf5e230cf6604e2d27c6c595242c9f7cf71c3984f9a39330be0e0c5"
+            "sha256": "213fb3295f52e6ee13287c89190643a898a4d5422ef568bf04affcb76197b731"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -41,12 +41,9 @@
             "version": "==4.2.0"
         },
         "celery": {
-            "hashes": [
-                "sha256:870cc71d737c0200c397290d730344cc991d13a057534353d124c9380267aab9",
-                "sha256:9da4ea0118d232ce97dff5ed4974587fb1c0ff5c10042eb15278487cdd27d1af"
-            ],
+            "git": "https://github.com/celery/celery.git",
             "markers": "python_version >= '3.8'",
-            "version": "==5.3.6"
+            "ref": "ac16f239985cf9248155b95788c4b6227f7f1b94"
         },
         "click": {
             "hashes": [
